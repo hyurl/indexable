@@ -64,7 +64,7 @@ function indexable(arg) {
         setIterator(arg.prototype);
 
         return new Proxy(arg, {
-            construct: (target, args, newTarget) => {
+            construct: (target, args) => {
                 let obj = new target(...args);
                 setLength(obj);
 
